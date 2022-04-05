@@ -1,6 +1,10 @@
 # magic-8
 'Magic 8' game implementation in pure C
 
+## Download
+[Binary](https://github.com/PackmanDude/magic-8/releases/download/Latest/magic8) for all OSes
+(to use globally add this file to your $PATH)
+
 ## Usage
 Correct behavior is
 ```
