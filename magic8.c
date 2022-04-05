@@ -14,7 +14,8 @@ int main(int argc, char *argv[])
 	}
 
 	char *result = malloc(27);
-	switch(rand() % 20)
+	int answer = rand() % 20;
+	switch(answer)
 	{
 		case 0:
 			strcpy(result, "It is certain.");
@@ -79,5 +80,6 @@ int main(int argc, char *argv[])
 	}
 	printf("%s\n", result);
 	free(result);
+	printf("Your karma is %s\n", answer < 10 ? "37.5" : "17.25");
 	return 0;
 }
