@@ -6,15 +6,14 @@
 int main(int argc, char *argv[])
 {
 	srand(time(NULL));
-	char latestChar = argv[argc-1][strlen(argv[argc-1])-1];	// Was a problem
 
-	if (latestChar != '?')	// This was not a problem
+	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// This was not a problem
 	{
 		fprintf(stderr, "You need to ask first!\n");
 		return 1;
 	}
 
-	char *result = malloc(256);
+	char *result = malloc(27);
 	switch(rand() % 20)
 	{
 		case 0:
