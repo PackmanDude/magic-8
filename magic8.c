@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
 
@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
 
 	char *result = malloc(27);
 	int answer = rand() % 20;
-	switch(answer)
+	int *pAnswer = &answer;
+	switch(*pAnswer)
 	{
 		case 0:
 			strcpy(result, "It is certain.");
@@ -75,11 +76,19 @@ int main(int argc, char *argv[])
 			strcpy(result, "Outlook not so good.");
 			break;
 		case 19:
-			strcpy(result, "Very doubtful. ");
+			strcpy(result, "Very doubtful.");
 			break;
 	}
 	printf("%s\n", result);
 	free(result);
-	printf("Your karma is %s\n", answer < 10 ? "37.5" : "17.25");
+
+	FILE *fp = fopen("karma.txt", "w+");
+//	fgets(fp, sizeof fp, );
+
+//	fputs(10, fp);
+	fclose(fp);
+
+	printf("Your karma is %s\n", *pAnswer < 10 ? "13.35" : *pAnswer > 14 ?
+			"25.08" : "12.54");
 	return 0;
 }
