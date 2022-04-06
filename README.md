@@ -2,7 +2,7 @@
 'Magic 8' game implementation in pure C
 
 ## Download
-[Binary](https://github.com/PackmanDude/magic-8/releases/download/Latest/magic8) for all OSes
+Latest executable can be download [here](https://github.com/PackmanDude/magic-8/releases/Latest) (Windows, MacOS, Linux)
 (to use globally add this file to your $PATH)
 
 ## Usage
