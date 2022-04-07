@@ -90,7 +90,6 @@ int main(int argc, char *argv[])
 	fscanf(fp, "%lf", n);
 	*pKarma += *n;
 
-	fp = fopen("karma.txt", "w");
 	fprintf(fp, "%d\n", *pKarma);
 	fclose(fp);
 	printf("Your karma is %d\n", *pKarma);
