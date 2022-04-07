@@ -14,74 +14,75 @@ int main(int argc, char *argv[])
 	}
 
 	char *result = malloc(27);
+	char **pResult = &result;
 	int answer = rand() % 20;
 	int *pAnswer = &answer;
 	switch(*pAnswer)
 	{
 		case 0:
-			strcpy(result, "It is certain.");
+			strcpy(*pResult, "It is certain.");
 			break;
 		case 1:
-			strcpy(result, "It is decidedly so.");
+			strcpy(*pResult, "It is decidedly so.");
 			break;
 		case 2:
-			strcpy(result, "Without a doubt.");
+			strcpy(*pResult, "Without a doubt.");
 			break;
 		case 3:
-			strcpy(result, "Yes definitely.");
+			strcpy(*pResult, "Yes definitely.");
 			break;
 		case 4:
-			strcpy(result, "You may rely on it.");
+			strcpy(*pResult, "You may rely on it.");
 			break;
 		case 5:
-			strcpy(result, "As I see it, yes.");
+			strcpy(*pResult, "As I see it, yes.");
 			break;
 		case 6:
-			strcpy(result, "Most likely.");
+			strcpy(*pResult, "Most likely.");
 			break;
 		case 7:
-			strcpy(result, "Outlook good.");
+			strcpy(*pResult, "Outlook good.");
 			break;
 		case 8:
-			strcpy(result, "Yes.");
+			strcpy(*pResult, "Yes.");
 			break;
 		case 9:
-			strcpy(result, "Signs point to yes.");
+			strcpy(*pResult, "Signs point to yes.");
 			break;
 		case 10:
-			strcpy(result, "Reply hazy, try again.");
+			strcpy(*pResult, "Reply hazy, try again.");
 			break;
 		case 11:
-			strcpy(result, "Ask again later.");
+			strcpy(*pResult, "Ask again later.");
 			break;
 		case 12:
-			strcpy(result, "Better not tell you now.");
+			strcpy(*pResult, "Better not tell you now.");
 			break;
 		case 13:
-			strcpy(result, "Cannot predict now.");
+			strcpy(*pResult, "Cannot predict now.");
 			break;
 		case 14:
-			strcpy(result, "Concentrate and ask again.");
+			strcpy(*pResult, "Concentrate and ask again.");
 			break;
 		case 15:
-			strcpy(result, "Don't count on it.");
+			strcpy(*pResult, "Don't count on it.");
 			break;
 		case 16:
-			strcpy(result, "My reply is no.");
+			strcpy(*pResult, "My reply is no.");
 			break;
 		case 17:
-			strcpy(result, "My sources say no.");
+			strcpy(*pResult, "My sources say no.");
 			break;
 		case 18:
-			strcpy(result, "Outlook not so good.");
+			strcpy(*pResult, "Outlook not so good.");
 			break;
 		case 19:
-			strcpy(result, "Very doubtful.");
+			strcpy(*pResult, "Very doubtful.");
 			break;
 	}
-	printf("%s\n", result);
-	free(result);
-	double karma = *pAnswer < 10 ? 5.0 : *pAnswer > 14 ? 0.0 : -10.0;
+	printf("%s\n", *pResult);
+	free(*pResult);
+	int karma = *pAnswer < 10 ? 5.0 : *pAnswer > 14 ? 0.0 : -10.0;
 
 	FILE *fp = fopen("karma.txt", "a+");
 	double *n;
@@ -89,9 +90,9 @@ int main(int argc, char *argv[])
 	karma += *n;
 
 	fp = fopen("karma.txt", "w");
-	fprintf(fp, "%lf\n", karma);
+	fprintf(fp, "%d\n", karma);
 	fclose(fp);
-	printf("Your karma is %.2lf\n", karma);
+	printf("Your karma is %d\n", karma);
 
 	return 0;
 }
