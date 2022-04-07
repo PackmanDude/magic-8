@@ -84,11 +84,11 @@ int main(int argc, char *argv[])
 	free(*pResult);
 	int karma = *pAnswer < 10 ? 5 : *pAnswer > 14 ? 0 : -10;
 	int *pKarma = &karma;
-	
+
 	FILE *fp = fopen("karma.txt", "a+");
 	double *n;
 	fscanf(fp, "%lf", n);
-	pKarma += *n;
+	*pKarma += *n;
 
 	fp = fopen("karma.txt", "w");
 	fprintf(fp, "%d\n", *pKarma);
