@@ -83,16 +83,17 @@ int main(int argc, char *argv[])
 	printf("%s\n", *pResult);
 	free(*pResult);
 	int karma = *pAnswer < 10 ? 5 : *pAnswer > 14 ? 0 : -10;
-
+	int *pKarma = &karma;
+	
 	FILE *fp = fopen("karma.txt", "a+");
 	double *n;
 	fscanf(fp, "%lf", n);
-	karma += *n;
+	pKarma += *n;
 
 	fp = fopen("karma.txt", "w");
-	fprintf(fp, "%d\n", karma);
+	fprintf(fp, "%d\n", *pKarma);
 	fclose(fp);
-	printf("Your karma is %d\n", karma);
+	printf("Your karma is %d\n", *pKarma);
 
 	return 0;
 }
