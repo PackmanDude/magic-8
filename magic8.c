@@ -86,9 +86,9 @@ int main(int argc, char *argv[])
 	int *pKarma = &karma;
 
 	FILE *fp = fopen("karma.txt", "a+");
-	double *n;
-	fscanf(fp, "%lf", n);
-	*pKarma += *n;
+	double n;
+	fscanf(fp, "%lf", &n);
+	*pKarma += n;
 
 	fprintf(fp, "%d\n", *pKarma);
 	fclose(fp);
