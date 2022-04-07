@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
 	}
 	printf("%s\n", *pResult);
 	free(*pResult);
-	int karma = *pAnswer < 10 ? 5.0 : *pAnswer > 14 ? 0.0 : -10.0;
+	int karma = *pAnswer < 10 ? 5 : *pAnswer > 14 ? 0 : -10;
 
 	FILE *fp = fopen("karma.txt", "a+");
 	double *n;
