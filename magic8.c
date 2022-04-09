@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 
 	char *result = malloc(27);
 	char **pResult = &result;
-	int answer = rand() % 20;
-	int *pAnswer = &answer;
+	short answer = rand() % 20;
+	short *pAnswer = &answer;
 	switch(*pAnswer)
 	{
 		case 0:
@@ -82,8 +82,8 @@ int main(int argc, char *argv[])
 	}
 	printf("%s\n", *pResult);
 	free(*pResult);
-	int karma = *pAnswer < 10 ? 5 : *pAnswer > 14 ? 0 : -10;
-	int *pKarma = &karma;
+	short karma = *pAnswer < 10 ? 5 : *pAnswer > 14 ? 0 : -10;
+	short *pKarma = &karma;
 
 	FILE *fp = fopen("karma.txt", "a+");
 	double n;
