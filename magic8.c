@@ -3,6 +3,8 @@
 #include <string.h>
 #include <time.h>
 
+void karmaHandle(short answer);
+
 int main(int argc, char *argv[])
 {
 	srand(time(NULL));
@@ -15,6 +17,7 @@ int main(int argc, char *argv[])
 
 	char *result = malloc(27);
 	char **pResult = &result;
+
 	short answer = rand() % 20;
 	short *pAnswer = &answer;
 
@@ -84,7 +87,14 @@ int main(int argc, char *argv[])
 
 	printf("%s\n", *pResult);
 	free(*pResult);
-	short karma = *pAnswer < 10 ? 5 : *pAnswer > 14 ? 0 : -10;
+
+	karmaHandle(*pAnswer);
+	return 0;
+}
+
+void karmaHandle(short answer)
+{
+	short karma = answer < 10 ? 5 : answer > 14 ? 0 : -10;
 	short *pKarma = &karma;
 
 	FILE *fp = fopen("karma.txt", "a+");
@@ -95,5 +105,4 @@ int main(int argc, char *argv[])
 	fprintf(fp, "%d\n", *pKarma);
 	fclose(fp);
 	printf("Your karma is %d\n", *pKarma);
-	return 0;
 }
