@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
 	char **pResult = &result;
 	short answer = rand() % 20;
 	short *pAnswer = &answer;
+
 	switch(*pAnswer)
 	{
 		case 0:
@@ -80,6 +81,7 @@ int main(int argc, char *argv[])
 			strcpy(*pResult, "Very doubtful.");
 			break;
 	}
+
 	printf("%s\n", *pResult);
 	free(*pResult);
 	short karma = *pAnswer < 10 ? 5 : *pAnswer > 14 ? 0 : -10;
@@ -93,6 +95,5 @@ int main(int argc, char *argv[])
 	fprintf(fp, "%d\n", *pKarma);
 	fclose(fp);
 	printf("Your karma is %d\n", *pKarma);
-
 	return 0;
 }
