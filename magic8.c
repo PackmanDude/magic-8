@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	srand(time(NULL));
 
-	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// This was not a problem
+	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// Last character != ?
 	{
 		fprintf(stderr, "You need to ask first!\n");
 		return 1;
@@ -94,6 +94,7 @@ int main(int argc, char *argv[])
 
 void karmaHandle(short answer)
 {
+// answers: 0..9 — affirmative, 10..14 — non-committal, 15..19 — negative
 	short karma = answer < 10 ? 5 : answer > 14 ? 0 : -10;
 	short *pKarma = &karma;
 
