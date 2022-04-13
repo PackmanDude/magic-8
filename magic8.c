@@ -95,12 +95,13 @@ int main(int argc, char *argv[])
 void karmaHandle(short answer)
 {
 // answers: 0..9 — affirmative, 10..14 — non-committal, 15..19 — negative
-	short karma = answer < 10 ? 5 : answer > 14 ? 0 : -10;
-	short *pKarma = &karma;
+	short karmaPer = answer < 10 ? 5 : answer > 14 ? 0 : -10;
+	int karma = karmaPer;
+	int *pKarma = &karma;
 
 	FILE *fp = fopen("karma.txt", "a+");
-	double n;
-	fscanf(fp, "%lf", &n);
+	int n;
+	fscanf(fp, "%d", &n);
 	*pKarma += n;
 
 	fprintf(fp, "%d\n", *pKarma);
