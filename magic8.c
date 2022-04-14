@@ -3,7 +3,7 @@
 #include <string.h>
 #include <time.h>
 
-void karmaHandle(short answer);
+void karmaHandle(int answer);
 
 int main(int argc, char *argv[])
 {
@@ -92,18 +92,28 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
-void karmaHandle(short answer)
-{
-// answers: 0..9 — affirmative, 10..14 — non-committal, 15..19 — negative
-	short karmaPer = answer < 10 ? 5 : answer > 14 ? 0 : -10;
+void karmaHandle(int answer)
+{// answers meaning:
+//	0..9 — affirmative, 10..14 — non-committal, 15..19 — negative
+
+	int karmaPer = answer < 10 ? 5 : answer > 14 ? 0 : -10;
 	int karma = karmaPer;
 	int *pKarma = &karma;
 
-	FILE *fp = fopen("karma.txt", "a+");
-	int n;
-	fscanf(fp, "%d", &n);
-	*pKarma += n;
+	FILE *fp = fopen("karma.txt", "r");
 
+	if (fp == NULL)
+	{
+		fp = fopen("karma.txt", "w+");
+		fputs("0\n", fp);
+	}
+
+	rewind(fp);
+	int temp;
+	fscanf(fp, "%d", &temp);
+	*pKarma += temp;
+
+	fp = fopen("karma.txt", "w");
 	fprintf(fp, "%d\n", *pKarma);
 	fclose(fp);
 	printf("Your karma is %d\n", *pKarma);
