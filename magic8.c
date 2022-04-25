@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// Last character != ?
 	{
 		fprintf(stderr, "You need to ask first!\n");
-		return 1;
+		return -1;
 	}
 
 	char *result = malloc(27);
