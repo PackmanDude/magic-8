@@ -3,9 +3,7 @@
 
 ## Download
 Latest executable can be download [here](https://github.com/PackmanDude/magic-8/releases/latest) (Windows, MacOS, Linux)  
-(to use from any location add it to your $PATH)
-
-Also, don't use pre-realeases, they're broken, like your life. Go fuck yourself and don't meet me again ever!
+(to use from any location add it to your PATH)
 
 ## Usage
 Correct behavior is
