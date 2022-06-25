@@ -9,9 +9,9 @@ int main(int argc, char *argv[])
 {
 	srand(time(NULL));
 
-	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// Last character != ?
+	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// Check if last character not equals '?'
 	{
-		fprintf(stderr, "You need to ask first!\n");
+		fprintf(stderr, "You need to ask first!\n");	// Prompt about into stderr
 		return -1;
 	}
 
@@ -102,7 +102,7 @@ void karmaHandle(int answer)
 
 	FILE *fp = fopen("karma.txt", "r");
 
-	if (fp == NULL)
+	if (fp == NULL)				// Create a file, if not exists
 	{
 		fp = fopen("karma.txt", "w+");
 		fputs("0\n", fp);
