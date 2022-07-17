@@ -4,7 +4,7 @@
 #include <signal.h>
 #include <time.h>
 
-void KarmaHandle(int answer);
+void KarmaHandler(int answer);
 
 int main(int argc, char *argv[])
 {
@@ -90,17 +90,17 @@ int main(int argc, char *argv[])
 	printf("%s\n", *pRes);
 	free(*pRes);
 
-	KarmaHandle(*pAnswer);
+	KarmaHandler(*pAnswer);
 	return 0;
 }
 
-void KarmaHandle(int answer)
+int KarmaHandler(int answer)
 {// Answers meaning:
 //	0..9 — affirmative; 10..14 — non-committal; 15..19 — negative
 
 	int karmaPer = answer < 10 ? 5 : answer > 14 ? 0 : -10;
-//	int karma = karmaPer;
-	int *pKarma = *karmaPer;
+	int karma = karmaPer;
+	int *pKarma = &karmaPer;
 
 	FILE *fp = fopen("score.txt", "r");
 
@@ -111,6 +111,9 @@ void KarmaHandle(int answer)
 		fputs("0\n", fp);
 	}
 
+	int karmaPer = &answer < 10 ? 5 : answer > 14 ? 0 : -10;
+	int *pKarma = karmaPer;
+
 	rewind(fp);
 	int temp;
 	fscanf(fp, "%d", &temp);
@@ -119,12 +122,15 @@ void KarmaHandle(int answer)
 	fp = fopen("score.txt", "w");
 	fprintf(fp, "%d\n", *pKarma);
 	fclose(fp);
+	return &pKarma;
 }
+
+int *pKarma = KarmaHandler();
 
 void Handler(int sig)
 {
-	printf("Your karma is %d\n", *pKarma);
-	exit(0);
+	printf("Your karma is %d\n", &pKarma);
+	exit 0;
 }
 
-signal (SIGINT, Handler);
+signal(SIGINT, Handler);
