@@ -9,14 +9,14 @@ int main(int argc, char *argv[])
 {
 	srand(time(NULL));
 
-	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// Last character != ?
+	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// Check if the last character is not equals '?'
 	{
 		fprintf(stderr, "You need to ask first!\n");
 		return -1;
 	}
 
 	char *result = malloc(27);
-	char **pResult = &result;
+	char **pRes = &result;
 
 	short answer = rand() % 20;
 	short *pAnswer = &answer;
@@ -24,69 +24,69 @@ int main(int argc, char *argv[])
 	switch(*pAnswer)
 	{
 		case 0:
-			strcpy(*pResult, "It is certain.");
+			strcpy(*pRes, "It is certain.");
 			break;
 		case 1:
-			strcpy(*pResult, "It is decidedly so.");
+			strcpy(*pRes, "It is decidedly so.");
 			break;
 		case 2:
-			strcpy(*pResult, "Without a doubt.");
+			strcpy(*pRes, "Without a doubt.");
 			break;
 		case 3:
-			strcpy(*pResult, "Yes definitely.");
+			strcpy(*pRes, "Yes definitely.");
 			break;
 		case 4:
-			strcpy(*pResult, "You may rely on it.");
+			strcpy(*pRes, "You may rely on it.");
 			break;
 		case 5:
-			strcpy(*pResult, "As I see it, yes.");
+			strcpy(*pRes, "As I see it, yes.");
 			break;
 		case 6:
-			strcpy(*pResult, "Most likely.");
+			strcpy(*pRes, "Most likely.");
 			break;
 		case 7:
-			strcpy(*pResult, "Outlook good.");
+			strcpy(*pRes, "Outlook good.");
 			break;
 		case 8:
-			strcpy(*pResult, "Yes.");
+			strcpy(*pRes, "Yes.");
 			break;
 		case 9:
-			strcpy(*pResult, "Signs point to yes.");
+			strcpy(*pRes, "Signs point to yes.");
 			break;
 		case 10:
-			strcpy(*pResult, "Reply hazy, try again.");
+			strcpy(*pRes, "Reply hazy, try again.");
 			break;
 		case 11:
-			strcpy(*pResult, "Ask again later.");
+			strcpy(*pRes, "Ask again later.");
 			break;
 		case 12:
-			strcpy(*pResult, "Better not tell you now.");
+			strcpy(*pRes, "Better not tell you now.");
 			break;
 		case 13:
-			strcpy(*pResult, "Cannot predict now.");
+			strcpy(*pRes, "Cannot predict now.");
 			break;
 		case 14:
-			strcpy(*pResult, "Concentrate and ask again.");
+			strcpy(*pRes, "Concentrate and ask again.");
 			break;
 		case 15:
-			strcpy(*pResult, "Don't count on it.");
+			strcpy(*pRes, "Don't count on it.");
 			break;
 		case 16:
-			strcpy(*pResult, "My reply is no.");
+			strcpy(*pRes, "My reply is no.");
 			break;
 		case 17:
-			strcpy(*pResult, "My sources say no.");
+			strcpy(*pRes, "My sources say no.");
 			break;
 		case 18:
-			strcpy(*pResult, "Outlook not so good.");
+			strcpy(*pRes, "Outlook not so good.");
 			break;
 		case 19:
-			strcpy(*pResult, "Very doubtful.");
+			strcpy(*pRes, "Very doubtful.");
 			break;
 	}
 
-	printf("%s\n", *pResult);
-	free(*pResult);
+	printf("%s\n", *pRes);
+	free(*pRes);
 
 	karmaHandle(*pAnswer);
 	return 0;
