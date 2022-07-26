@@ -19,6 +19,7 @@ magic8 {question}?
 -->
 
 Demo:
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=ex-H7i8BF1E" target="_blank">
 	<img src="http://img.youtube.com/vi/ex-H7i8BF1E/0.jpg" 
 		 alt="Program Showcase" width="240" height="180" border="10" />
