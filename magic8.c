@@ -4,8 +4,6 @@
 #include <string.h>
 #include <time.h>
 
-void karmaHandle(int answer);
-
 int main(int argc, char *argv[])
 {
 	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// Check if the last character is not equals '?'
