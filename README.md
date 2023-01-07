@@ -1,6 +1,6 @@
 # magic-8
 
-'Magic 8' game implementation in just C.
+'Magic 8' game in just C.
 
 ## Get [magic-8](https://github.com/PackmanDude/magic-8)
 
@@ -23,4 +23,4 @@ Note: Question mark is also required.
 
 Demo (video):
 
-[![Demo](https://img.youtube.com/vi/ex-H7i8BF1E/0.jpg)](https://youtu.be/ex-H7i8BF1E)
+[![Demo](https://img.youtube.com/vi/ex-H7i8BF1E/0.jpg)](https://youtu.be/4DrOiCQgkSY)
