@@ -17,9 +17,9 @@ magic8 <question>?
 
 Note: Question mark is also required.
 
-<!--
+Example:
+
 ![Expected output](https://media.discordapp.net/attachments/928250277834948628/960921484820373554/photo_2022-04-05_18-15-45.jpg "Expected output")
--->
 
 Demo (video):
 
