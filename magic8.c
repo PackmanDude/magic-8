@@ -9,15 +9,19 @@ int main(int argc, char *argv[])
 	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// Check if the last character is not equals '?'
 	{
 		fprintf(stderr, "You need to ask first!\n");
-		return -1;
+		return 1;
 	}
 
-	srand(time(NULL));
+	struct timespec ts;
+	clock_gettime(CLOCK_MONOTONIC, &ts);
 
-	char *result = malloc(27);
+	// using nano-seconds instead of seconds
+	srand((time_t)ts.tv_nsec);
 
-	uint8_t answer = rand() % 20;
-	uint8_t *pAnswer = &answer;
+	char *result = malloc(sizeof(*result)*27);
+
+	uint_least8_t answer = rand() % 20;
+	uint_least8_t *pAnswer = &answer;
 
 	switch(*pAnswer)
 	{
