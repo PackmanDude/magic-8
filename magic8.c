@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
 	struct timespec ts;
 	clock_gettime(CLOCK_MONOTONIC_COARSE, &ts);
-	// using nano-seconds instead of seconds
+	// Using nanoseconds instead of seconds.
 	srand((time_t)ts.tv_nsec);
 
 	int guess = rand() % 20;
