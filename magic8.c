@@ -1,92 +1,46 @@
-#include <stdio.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <chadstr.h>
 #include <time.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
-	if (argv[argc-1][strlen(argv[argc-1])-1] != '?')	// Check if the last character is not equals '?'
+	if (argv[argc - 1][strlen(argv[argc - 1]) - 1] != '?')	// Check if the last character is not equals '?'
 	{
-		fprintf(stderr, "You need to ask first!\n");
-		return 1;
+		fprintf(stderr, "You need to ask first! (add a question mark at the end)\n");
+		return EXIT_FAILURE;
 	}
 
 	struct timespec ts;
-	clock_gettime(CLOCK_MONOTONIC, &ts);
-
+	clock_gettime(CLOCK_MONOTONIC_COARSE, &ts);
 	// using nano-seconds instead of seconds
 	srand((time_t)ts.tv_nsec);
 
-	char *result = malloc(sizeof(*result)*27);
-
-	uint_least8_t answer = rand() % 20;
-	uint_least8_t *pAnswer = &answer;
-
-	switch(*pAnswer)
+	int guess = rand() % 20;
+	const char *answers[] =
 	{
-		case 0:
-			strcpy(result, "It is certain.");
-			break;
-		case 1:
-			strcpy(result, "It is decidedly so.");
-			break;
-		case 2:
-			strcpy(result, "Without a doubt.");
-			break;
-		case 3:
-			strcpy(result, "Yes definitely.");
-			break;
-		case 4:
-			strcpy(result, "You may rely on it.");
-			break;
-		case 5:
-			strcpy(result, "As I see it, yes.");
-			break;
-		case 6:
-			strcpy(result, "Most likely.");
-			break;
-		case 7:
-			strcpy(result, "Outlook good.");
-			break;
-		case 8:
-			strcpy(result, "Yes.");
-			break;
-		case 9:
-			strcpy(result, "Signs point to yes.");
-			break;
-		case 10:
-			strcpy(result, "Reply hazy, try again.");
-			break;
-		case 11:
-			strcpy(result, "Ask again later.");
-			break;
-		case 12:
-			strcpy(result, "Better not tell you now.");
-			break;
-		case 13:
-			strcpy(result, "Cannot predict now.");
-			break;
-		case 14:
-			strcpy(result, "Concentrate and ask again.");
-			break;
-		case 15:
-			strcpy(result, "Don't count on it.");
-			break;
-		case 16:
-			strcpy(result, "My reply is no.");
-			break;
-		case 17:
-			strcpy(result, "My sources say no.");
-			break;
-		case 18:
-			strcpy(result, "Outlook not so good.");
-			break;
-		case 19:
-			strcpy(result, "Very doubtful.");
-			break;
-	}
-	printf("%s\n", result);
-	free(result);
-	return 0;
+		"It is certain",
+		"It is decidedly so",
+		"Without a doubt",
+		"Yes definitely",
+		"You may rely on it",
+		"As I see it, yes",
+		"Most likely",
+		"Outlook good",
+		"Yes",
+		"Signs point to yes",
+		"Reply hazy, try again",
+		"Ask again later",
+		"Better not tell you now",
+		"Cannot predict now",
+		"Concentrate and ask again",
+		"Don't count on it",
+		"My reply is no",
+		"My sources say no",
+		"Outlook not so good",
+		"Very doubtful"
+	};
+
+	printf("%s.\n", answers[guess]);
+	return EXIT_SUCCESS;
 }
