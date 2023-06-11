@@ -1,21 +1,25 @@
 # magic-8
 
-'Magic 8' game in just C.
+'[Magic 8](https://en.wikipedia.org/wiki/Magic_8_Ball)' game in C99.
 
 ## Get [magic-8](https://github.com/PackmanDude/magic-8)
 
-Download [here](https://github.com/PackmanDude/magic-8/releases/latest) (Linux, MacOS, Windows)  
+Copy the contents of this repository by using Code -> Download ZIP or by using git:
+```sh
+git clone --depth 1 https://github.com/PackmanDude/magic-8.git
+```
+and compile it using your favourite C compiler.
+
+Or download an executable, if you're on GNU/Linux machine: [here](https://github.com/PackmanDude/magic-8/releases/latest)  
 (to use from any location add it to your PATH variable)
 
 ## Usage
 
 Syntax:
-
-```
+```sh
 magic8 <question>?
 ```
-
-Note: Question mark is also required.
+_Note: it does not remember your inputs._
 
 Example:
 
