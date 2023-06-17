@@ -4,13 +4,13 @@
 
 ## Get [magic-8](https://github.com/PackmanDude/magic-8)
 
-Copy the contents of this repository by using Code -> Download ZIP or by using git:
+Copy the contents of this repository by using `Code -> Download ZIP` or by using git:
 ```sh
 git clone --depth 1 https://github.com/PackmanDude/magic-8.git
 ```
 and compile it using your favourite C compiler.
 
-Or download an executable, if you're on GNU/Linux machine: [here](https://github.com/PackmanDude/magic-8/releases/latest)  
+Or download an executable, if you're using Unix-like OS: [here it is](https://github.com/PackmanDude/magic-8/releases/latest)  
 (to use from any location add it to your PATH variable)
 
 ## Usage
