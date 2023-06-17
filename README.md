@@ -1,6 +1,6 @@
 # magic-8
 
-'[Magic 8](https://en.wikipedia.org/wiki/Magic_8_Ball)' game in C99.
+'[Magic 8](https://en.wikipedia.org/wiki/Magic_8_Ball)' game in C.
 
 ## Get [magic-8](https://github.com/PackmanDude/magic-8)
 
