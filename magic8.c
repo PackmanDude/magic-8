@@ -5,14 +5,15 @@
 
 int main(int argc, char *argv[])
 {
-	if (argv[argc - 1][strlen(argv[argc - 1]) - 1] != '?')	// Check if the last character is not equals '?'
+	// Check if the last character is not equals '?'
+	if (argv[argc - 1][strlen(argv[argc - 1]) - 1] != '?')
 	{
 		fprintf(stderr, "You need to ask first! (add a question mark at the end)\n");
 		return EXIT_FAILURE;
 	}
 
 	struct timespec ts;
-	clock_gettime(CLOCK_MONOTONIC_COARSE, &ts);
+	clock_gettime(CLOCK_MONOTONIC, &ts);
 	// Using nanoseconds instead of seconds.
 	srand((time_t)ts.tv_nsec);
 
