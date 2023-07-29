@@ -12,12 +12,10 @@ int main(int argc, char *argv[])
 		return EXIT_FAILURE;
 	}
 
-	struct timespec ts;
+	struct timespec ts = { 0 };
 	clock_gettime(CLOCK_MONOTONIC, &ts);
-	// Using nanoseconds instead of seconds.
-	srand((time_t)ts.tv_nsec);
+	srand(ts.tv_nsec);
 
-	int guess = rand() % 20;
 	const char *answers[] =
 	{
 		"It is certain",
@@ -41,6 +39,7 @@ int main(int argc, char *argv[])
 		"Outlook not so good",
 		"Very doubtful"
 	};
+	int guess = rand() % (sizeof answers / sizeof *answers);
 
 	printf("%s.\n", answers[guess]);
 	return EXIT_SUCCESS;
