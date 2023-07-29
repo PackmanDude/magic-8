@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	clock_gettime(CLOCK_MONOTONIC, &ts);
 	srand(ts.tv_nsec);
 
-	const char *answers[] =
+	const char *answers[20] =
 	{
 		"It is certain",
 		"It is decidedly so",
@@ -39,8 +39,7 @@ int main(int argc, char *argv[])
 		"Outlook not so good",
 		"Very doubtful"
 	};
-	int guess = rand() % (sizeof answers / sizeof *answers);
 
-	printf("%s.\n", answers[guess]);
+	printf("%s.\n", answers[rand() % 20]);
 	return EXIT_SUCCESS;
 }
