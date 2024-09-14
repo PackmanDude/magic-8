@@ -21,10 +21,6 @@ magic8 <question>?
 ```
 _Note: it does not remember your inputs._
 
-Example:
-
-![Expected output](https://media.discordapp.net/attachments/928250277834948628/960921484820373554/photo_2022-04-05_18-15-45.jpg "Expected output")
-
 Demo (video):
 
-[![Demo](https://img.youtube.com/vi/ex-H7i8BF1E/0.jpg)](https://youtu.be/4DrOiCQgkSY)
+[![Demo](https://i.ytimg.com/vi/ex-H7i8BF1E/maxresdefault.jpg)](https://youtu.be/ex-H7i8BF1E)
